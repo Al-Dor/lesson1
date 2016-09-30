@@ -1,6 +1,18 @@
-def get_answer(frase, prepared_frases):
-	return prepared_frases[frase]
+#def get_answer(question_dictionary, question):
+#	return question_dictionary[question]
+
+answers = { 'Привет': 'И тебе привет',\
+			'Как дела?': 'Лучше всех',\
+			'Когда в отпуск': 'Еще нескоро'}
 
 
-answers = {'привет': 'и тебе привет!', 'как дела': 'лучше всех', 'пока': 'увидимся'}
-print(get_answer('привет', answers))
+while True:
+	user_question = input('О чем хочешь спросить? ')
+	if user_question == 'Пока':
+		print('Увидимся')
+		break
+	elif answers.get(user_question) is None:
+		print('Не поняла тебя, уточни')
+	else: 
+		print(answers.get(user_question))
+	
